@@ -1,0 +1,60 @@
+﻿<Window x:Class="FinalProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Button Name="lendMedia" Content="Lend Media" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Click="lendMedia_Click"/>
+        <Button Name="returnMedia" Content="Return Media" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" Click="returnMedia_Click"/>
+        <Button Name="modifyMember" Content="Modify Member" Grid.Row="4" Grid.Column="0" Grid.RowSpan="2" Click="modifyMember_Click"/>
+        <Button Name="modifyMedia" Content="Modify Media" Grid.Row="6" Grid.Column="0" Grid.RowSpan="2" Click="modifyMedia_Click"/>
+        <DataGrid Name="libraryList"
+                  Grid.Column="1" Grid.Row="0"
+                  Grid.ColumnSpan="5" Grid.RowSpan="18" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding title,Mode=OneWay}" Width="100" />
+                <DataGridTextColumn Header="Type" Binding="{Binding mediaType,Mode=OneWay}" Width="60" />
+                <DataGridCheckBoxColumn Header="Availability" Binding="{Binding isAvailable,Mode=OneWay}" Width="100" />
+                <DataGridTextColumn Header="Borrower" Binding="{Binding currentBorrowingMember,Mode=OneWay}" Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Name="membersName" Grid.Column="0" Grid.Row="8" Grid.RowSpan="10"   AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding name,Mode=OneWay}"  />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
